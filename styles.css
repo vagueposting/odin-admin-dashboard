@@ -1,0 +1,52 @@
+@import url(https://fonts.bunny.net/css?family=roboto:400);
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 16fr;
+}
+
+.sidebar {
+    grid-row: 1 / 3;
+
+    border: 2px solid blue;
+}
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+
+    border: 2px solid green;
+}
+
+.headerTop {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.headerBottom {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+}
+
+.search {
+    grid-column: 1 / 2;
+}
+
+.cards {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    border: 2px solid orange;
+}
