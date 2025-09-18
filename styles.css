@@ -66,6 +66,8 @@ body {
     display: grid;
     grid-template-columns: 0.10fr 1fr;
     gap: 10px;
+
+    align-items: center;
 }
 
 .ProfilePicture img {
@@ -74,13 +76,16 @@ body {
 }
 
 .GreetingText {
-    display: grid;
-    grid-template-rows: 1fr 4fr;
+    margin: 0;
 }
 
 .greet {
-    font-size: 0.75rem;
+    font-size: 1rem;
     margin: 0rem;
+}
+
+.username {
+    font-size: 2.5rem;
 }
 
 .DashControls {
