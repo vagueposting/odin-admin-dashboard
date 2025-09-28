@@ -38,6 +38,11 @@ body {
     grid-template-rows: 1fr 2fr;
 
     padding: 2rem 2.5rem;
+
+    position: relative;
+    z-index: 1;
+
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.12);
 }
 
 .headerTop {
@@ -113,7 +118,7 @@ body {
 }
 
 .ProfilePicture img {
-    height: 8rem;
+    height: 6rem;
     clip-path: circle(50% at 50% 50%)
 }
 
@@ -153,21 +158,31 @@ body {
     cursor: pointer;
 }
 
-.cards {
+.body {
     height: 100%;
 
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
-    padding: 1rem;
+    padding: 1.5rem;
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 
     background: #dfe6e9;
+}
+
+p {
+    color: gray;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.50rem auto;
 }
 
 .projects {
@@ -178,11 +193,78 @@ body {
 .projectCards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.card, .announcementBox, 
+.trendingBox {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card {
+    border-left: solid 0.5rem orange;
+    font-size: 1.25rem;
+    padding: 2rem;
+}
+
+.card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0;
+}
+
+.card p {
+    margin-top: 0;
+}
+
+.projectButtons {
+    margin: 3rem 0 0 0;
+
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+.projectButtons svg {
+    height: 2rem;
+    fill: #202020;
+    cursor: pointer;
 }
 
 .announcements {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.announcementBox {
+    padding: 1.5rem;
+}
+
+.announceInstance {
+    margin: 1rem 0;
+}
+
+.announceInstance h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.announceInstance p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis; 
 }
 
 .trending {
