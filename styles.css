@@ -1,9 +1,10 @@
-@import url(https://fonts.bunny.net/css?family=roboto:400,600);
+@import url(https://fonts.bunny.net/css?family=roboto:400,700,900);
 
 :root {
     font-size: 12pt;
 
-    --blue: #0984e3;
+    --base: #0abde3;
+    --accent: #576574;
 }
 
 html, body {
@@ -21,14 +22,65 @@ body {
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 0.5fr auto;
 
-    height: 100%
+    height: 100%;
+}
+
+/* SIDEBAR */
+
+.sidebar svg, .sidebar * svg {
+    fill: white;
 }
 
 .sidebar {
     grid-row: 1 / 3;
 
-    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3rem;
+
+    padding: 1rem;
+
+    background-color: var(--base);
+    color: white;
 }
+
+.sidebar h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 1rem 0 0rem 1rem; 
+
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
+.sidebar h1 svg {
+    height: 5rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    font-size: 1.90rem;
+    font-weight: 700;
+    
+    margin: 0 0 0 2rem;
+    padding: 0; 
+}
+
+.sidebar ul li {
+    margin: 1rem 0; 
+    cursor: pointer;
+
+    display: flex;
+    align-items: center; 
+    gap: 1.5rem; 
+}
+
+.sidebar ul li svg {
+    height: 2.50rem;
+}
+/* HEADER */
 
 .header {
     grid-column: 2 / 3;
@@ -93,7 +145,7 @@ body {
 
 .UserControl span {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .UserControl span:hover,
@@ -126,6 +178,10 @@ body {
     margin: 0;
 }
 
+.GreetingText * {
+    color: black;
+}
+
 .greet {
     font-size: 1rem;
     margin: 0rem;
@@ -133,7 +189,7 @@ body {
 
 .username {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .DashControls {
@@ -145,12 +201,12 @@ body {
 }
 
 .DashControls button {
-    background-color: var(--blue);
+    background-color: var(--base);
     border: none;
     border-radius: 5rem;
     padding: 1rem;
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: white;
 }
 
@@ -164,12 +220,12 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
-    padding: 1.5rem;
+    padding: 3rem 1rem 1rem 1rem;
     box-sizing: border-box;
 
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     gap: 1.5rem;
 
     background: #dfe6e9;
@@ -180,14 +236,14 @@ p {
     margin: 0;
 }
 
-h1 {
-    font-size: 2rem;
-    margin: 0.50rem auto;
+.body h1 {
+    font-size: 1.60rem;
+    margin: 0 0 0.50rem 0; 
 }
 
 .projects {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-row: 1 / span 2; 
 }
 
 .projectCards {
@@ -205,7 +261,7 @@ h1 {
 }
 
 .card {
-    border-left: solid 0.5rem orange;
+    border-left: solid 0.75rem var(--accent);
     font-size: 1.25rem;
     padding: 2rem;
 }
@@ -235,11 +291,7 @@ h1 {
 
 .announcements {
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    width: 90%;
-
-    margin-left: auto;
-    margin-right: auto;
+    align-self: flex-start;
 }
 
 .announcementBox {
@@ -269,5 +321,32 @@ h1 {
 
 .trending {
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
+}
+
+
+.trendingBox {
+    width: 90%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.TrendingUser {
+    margin: 1rem;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.TrendingUser img {
+    height: 5rem;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.TrendingUser div span {
+    font-size: 1.25rem;
+}
+
+.TrendingProject {
+    color: gray;
 }
